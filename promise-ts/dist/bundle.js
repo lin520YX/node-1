@@ -1,7 +1,6 @@
 'use strict';
 
 // promise 都是基于回调模式
-// }
 Function.prototype.before = function (fn) {
     return (...args) => {
         fn();

@@ -4,11 +4,11 @@
 
 type Callback = ()=>void
 type ReturnFn = (...args:any[])=>void
-// declare global {
+declare global {
     interface Function{ //接口的合并
         before(fn:Callback):ReturnFn
     }
-// }
+}
 Function.prototype.before = function(fn){
     return (...args)=>{
         fn();
@@ -22,3 +22,4 @@ let fn = core.before(()=>{
     console.log('core.before')
 })
 fn(1,2,3);
+export {}
